@@ -25,6 +25,7 @@
         copy: no
         owner: "{{ prometheus_user }}"
         group: "{{ prometheus_group }}"
+        creates: "{{ prometheus_alertmanager_daemon_dir }}"
         mode: "go-w"
 
   when: prometheus_alertmanager_version != "git"
