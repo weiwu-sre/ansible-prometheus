@@ -14,6 +14,10 @@
   service: name=prometheus state=stopped
   when: prometheus_use_service|bool
 
+- name: reload systemd
+  systemd:
+    daemon_reload: yes
+  when: prometheus_use_service|bool
 
 
 - name: restart node_exporter

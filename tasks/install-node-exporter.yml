@@ -105,7 +105,8 @@
 - name: copy systemd config to server
   template: src="../templates/node_exporter.service.j2"  dest="/etc/systemd/system/node_exporter.service"
   when: prometheus_use_systemd|bool
-
+  notify:
+    - reload systemd
 
 - name: set INIT status and start
   service: name=node_exporter enabled=yes state=started
