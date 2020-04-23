@@ -30,7 +30,7 @@
     group: "{{ prometheus_group }}"
     createhome: no
     shell: "{{ prometheus_user_shell }}"
-    comment: "Prometheus User"
+    comment: "{{ prometheus_user_comment }}"
     state: present
 
 - name: mkdir for general cases
